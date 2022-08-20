@@ -74,20 +74,15 @@ textarea::-webkit-scrollbar {
   font-feature-settings: "liga";
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .send-message-form {
-    max-width: calc(100vw - 384px);
+    max-width: calc(100vw - 300px);
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .send-message-form {
-    max-width: 50vw;
-  }
-}
-
-@media (max-device-width: 568px) {
-  .send-message-form {
+    width: 100vw;
     display: none;
   }
 }

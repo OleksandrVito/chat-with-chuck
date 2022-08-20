@@ -9,6 +9,7 @@
   margin-top: 0;
   padding-left: 0;
   overflow-y: scroll;
+  background-color: white;
 }
 
 .message-list::-webkit-scrollbar {
@@ -51,20 +52,6 @@
   font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
 }
 
-.title .forward {
-  background: none;
-  width: 50px;
-  height: 50px;
-  border: none;
-  position: relative;
-  top: 25px;
-  left: 10px;
-  margin-right: 10px;
-  justify-content: center;
-  text-align: center;
-  display: none;
-}
-
 .title h2 {
   font-size: 30px;
   font-weight: 500;
@@ -87,27 +74,24 @@
   left: 0;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .message-list,
   .message-block {
-    max-width: calc(100vw - 384px);
+    max-width: calc(100vw - 300px);
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .message-list,
   .message-block {
-    max-width: 50vw;
+    width: 100vw;
   }
 
-  .title .forward {
+  .title .back {
     display: flex;
   }
-}
 
-@media (max-device-width: 568px) {
-  .message-list,
-  .message-block {
+  .message-list {
     display: none;
   }
 }

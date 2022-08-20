@@ -15,6 +15,7 @@ class App extends Component {
         dataChats: JSON.parse(sessionStorage.getItem("data")),
         term: "",
         currentData: JSON.parse(sessionStorage.getItem("data"))[0],
+        sender: "",
       };
     } else {
       this.state = {
@@ -96,6 +97,7 @@ class App extends Component {
             },
           ],
         },
+        sender: "",
       };
     }
   }
@@ -113,9 +115,10 @@ class App extends Component {
         currentData: { ...currentData, messages: newMessages },
       };
     });
+
     setTimeout(() => {
       this.changeDataChats(this.state.dataChats, this.state.currentData);
-    }, 500);
+    }, 0);
   };
 
   onGetMessageFromChuck = (item, time, name) => {
@@ -144,13 +147,19 @@ class App extends Component {
       this.setState(() => {
         return {
           dataChats: clone,
+          sender: name,
         };
       });
-    }, 10000);
+      setTimeout(() => {
+        if (this.state.sender) {
+          this.addNotification(this.state.sender);
+        }
+      }, 0);
+    }, 0);
 
     setTimeout(() => {
       this.changeDataChats(this.state.dataChats, this.state.currentData);
-    }, 500);
+    }, 0);
   };
 
   searchEmp = (items, term) => {
@@ -158,12 +167,10 @@ class App extends Component {
       return items;
     }
     return items.filter((item) => {
-      if (
-        item.name.toLowerCase().indexOf(term.toLowerCase()[0]) === 0 &&
+      return item.name.toLowerCase().indexOf(term.toLowerCase()[0]) === 0 &&
         item.name.toLowerCase().indexOf(term.toLowerCase()) > -1
-      ) {
-        return item;
-      }
+        ? item
+        : null;
     });
   };
 
@@ -177,6 +184,11 @@ class App extends Component {
     this.setState({
       currentData: data.find((el) => el.name === currentName),
     });
+    document.querySelector("textarea").focus();
+    const messageList = document.querySelector(".message-list");
+    const sendMessageForm = document.querySelector(".send-message-form");
+    messageList.classList.add("visible");
+    sendMessageForm.classList.add("visible");
   };
 
   changeDataChats = (dataChats, currentData) => {
@@ -198,10 +210,45 @@ class App extends Component {
     }
   }
 
+  addNotification(name) {
+    document.querySelector(`#${name}`).classList.add("notification");
+    setTimeout(() => {
+      document.querySelector(`#${name}`).classList.remove("notification");
+    }, 2000);
+  }
+
+  onChangeView() {
+    const messageList = document.querySelector(".message-list");
+    const sendMessageForm = document.querySelector(".send-message-form");
+    messageList.classList.remove("visible");
+    sendMessageForm.classList.remove("visible");
+  }
   render() {
     sessionStorage.setItem("data", JSON.stringify(this.state.dataChats));
     const visibleChats = this.searchEmp(this.state.dataChats, this.state.term);
-    this.scroll();
+    setTimeout(() => {
+      this.scroll();
+    }, 0);
+
+    // const backBtn = document.querySelector(".back");
+    // let forwardBtn;
+    // if (document.querySelector(".forward")) {
+    //   forwardBtn = document.querySelector(".forward");
+    //   let width = document.body.clientWidth;
+    //   if (width <= 768) {
+    //     forwardBtn.addEventListener("click", () => {
+    //       console.log("ddddd");
+    //     });
+    //   }
+    // }
+
+    // const messageList = document.querySelector(".message-list");
+    // const sendMessageForm = document.querySelector(".send-message-form");
+    // const chatsList = document.querySelector(".chats-list");
+    // const searchPanel = document.querySelector(".search-panel");
+
+    // console.log(messageList);
+
     return (
       <div className="app">
         <SearchPanel onUpdateSearch={this.onUpdateSearch} />
@@ -211,7 +258,10 @@ class App extends Component {
           onGetMessageFromChuck={this.onGetMessageFromChuck}
           currentSender={this.state.currentData.name}
         />
-        <MessageList data={this.state.currentData} />
+        <MessageList
+          data={this.state.currentData}
+          onChangeView={this.onChangeView}
+        />
       </div>
     );
   }

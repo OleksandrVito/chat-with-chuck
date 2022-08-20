@@ -8,25 +8,17 @@ class MessageList extends Component {
     this.state = {};
   }
 
-  scroll() {
-    if (document.querySelector(".message-block")) {
-      document.querySelector(".message-block").scrollIntoView(false);
-    }
-  }
   render() {
     let message = this.props.data.messages.map((item, i) => {
       return <MessageItem {...item} key={i} photo={this.props.data.photo} />;
     });
     const photo = this.props.data.photo;
-    this.scroll();
+
     return (
       <main className="message-list">
         <div className="title">
-          <button className="back">
+          <button className="back" onClick={this.props.onChangeView}>
             <span className="material-symbols-outlined">arrow_back</span>
-          </button>
-          <button className="forward">
-            <span className="material-symbols-outlined">arrow_forward</span>
           </button>
           <div
             className="photo"

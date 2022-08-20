@@ -19,7 +19,7 @@ class SendMessageForm extends Component {
     });
   };
 
-  onGetMessageFromChuck = () => {
+  onGetMessageFromChuck = (name) => {
     fetch("https://api.chucknorris.io/jokes/random")
       .then((response) => response.json())
       .then((data) => {
@@ -33,9 +33,9 @@ class SendMessageForm extends Component {
           this.props.onGetMessageFromChuck(
             this.state.messageFromChuck,
             this.state.time,
-            this.state.nameSender
+            name
           );
-        }, 2000);
+        }, 0);
       });
   };
 
@@ -49,12 +49,15 @@ class SendMessageForm extends Component {
   };
 
   onSubmitMessage = () => {
+    let name = this.props.currentSender;
     this.props.onSendMessage(this.state.message, this.state.time);
     this.setState({
       message: "",
       nameSender: this.props.currentSender,
     });
-    this.onGetMessageFromChuck();
+    setTimeout(() => {
+      this.onGetMessageFromChuck(name);
+    }, 5000);
   };
 
   onEnterPress = (e) => {

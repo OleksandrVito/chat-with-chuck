@@ -6,3 +6,8 @@
   position: relative;
   box-sizing: border-box;
 }
+
+.visible {
+  display: block;
+  z-index: 2;
+}

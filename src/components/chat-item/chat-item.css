@@ -44,23 +44,17 @@
   width: 70%;
 }
 
-.notification {
-  background-color: green;
+.notification .chat-item-photo {
+  box-shadow: 0 0 8px 2px red;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .chat-item {
-    min-width: 384px;
+    min-width: 300px;
   }
 }
 
-@media (max-width: 768px) {
-  .chat-item {
-    width: 50vw;
-  }
-}
-
-@media (max-device-width: 568px) {
+@media screen and (max-width: 767px) {
   .chat-item {
     width: 100vw;
   }

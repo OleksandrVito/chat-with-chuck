@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  background-color: white;
 }
 
 .chats-list .title {
@@ -28,26 +29,16 @@
   display: none;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .chats-list,
   .chats-list .title {
-    min-width: 384px;
-    z-index: 2;
+    min-width: 300px;
   }
 }
 
-@media (max-width: 768px) {
-  .chats-list,
-  .chats-list .title {
-    width: 50vw;
-    z-index: 2;
-  }
-}
-
-@media (max-device-width: 568px) {
+@media screen and (max-width: 767px) {
   .chats-list,
   .chats-list .title {
     width: 100vw;
-    z-index: 2;
   }
 }

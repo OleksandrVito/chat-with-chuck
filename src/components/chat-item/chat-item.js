@@ -16,11 +16,7 @@ class ChatItem extends Component {
     } else {
       date = this.props.messages[this.props.messages.length - 1].time;
     }
-    // let classs = "chat-item";
 
-    // if (lastMessage) {
-    //   classs += " notification";
-    // }
     return (
       <div className="chat-item" onClick={this.props.onChangeChat} id={name}>
         <div
