@@ -22,7 +22,7 @@ class App extends Component {
         dataChats: [
           {
             name: "Alice",
-            photo: "url(/avatar/Alice.png)",
+            photo: "url(./avatar/Alice.png)",
             messages: [
               {
                 sender: "Alice",
@@ -229,25 +229,6 @@ class App extends Component {
     setTimeout(() => {
       this.scroll();
     }, 0);
-
-    // const backBtn = document.querySelector(".back");
-    // let forwardBtn;
-    // if (document.querySelector(".forward")) {
-    //   forwardBtn = document.querySelector(".forward");
-    //   let width = document.body.clientWidth;
-    //   if (width <= 768) {
-    //     forwardBtn.addEventListener("click", () => {
-    //       console.log("ddddd");
-    //     });
-    //   }
-    // }
-
-    // const messageList = document.querySelector(".message-list");
-    // const sendMessageForm = document.querySelector(".send-message-form");
-    // const chatsList = document.querySelector(".chats-list");
-    // const searchPanel = document.querySelector(".search-panel");
-
-    // console.log(messageList);
 
     return (
       <div className="app">
