@@ -27,12 +27,12 @@ class App extends Component {
               {
                 sender: "Alice",
                 text: "Don't worry about Chuck Norris' carbon footprint. His physical bootprints have destroyed the earth irrepairably as it is.",
-                time: "18/08/2022",
+                time: "8/20/22, 2:10 AM",
               },
               {
                 sender: "Alice",
                 text: "The only time Chuck Norris ever made a mistake was when he was writing about killing a squadron of ninjas. As he was writing that he 'owned' them, his finger slipped and wrote 'pwned' instead. It immediately became an official, widely-used term.",
-                time: "18/08/2022",
+                time: "8/20/22, 6:14 PM",
               },
             ],
           },
@@ -43,7 +43,7 @@ class App extends Component {
               {
                 sender: "Donald",
                 text: "Chuck Norris tans in a pizza oven.",
-                time: "18/08/2022",
+                time: "8/20/22, 6:26 PM",
               },
             ],
           },
@@ -54,12 +54,12 @@ class App extends Component {
               {
                 sender: "Josefina",
                 text: "Chucooked at s merely t s merely lookes merely lookes melookes merely lookes merely lookethem!",
-                time: "18/08/2022",
+                time: "8/20/22, 6:45 PM",
               },
               {
                 sender: "Josefina",
                 text: "I WANT TO CHOP CHUCK NORRIS IN HALF I WANNA KILL HIM",
-                time: "18/08/2022",
+                time: "8/20/22, 6:15 PM",
               },
             ],
           },
@@ -70,12 +70,12 @@ class App extends Component {
               {
                 sender: "Joseph",
                 text: "The Thousand Islands used to be one big island, but then Chuck Norris's roundhouse kick smashed it into pieces.",
-                time: "18/08/2022",
+                time: "8/15/22, 5:10 PM",
               },
               {
                 sender: "Joseph",
                 text: "Chuck Norris has the world's most famous taint.",
-                time: "18/08/2022",
+                time: "8/20/22, 5:16 PM",
               },
             ],
           },
@@ -88,12 +88,12 @@ class App extends Component {
             {
               sender: "Joseph",
               text: "The Thousand Islands used to be one big island, but then Chuck Norris's roundhouse kick smashed it into pieces.",
-              time: "18/08/2022",
+              time: "8/15/22, 5:10 PM",
             },
             {
               sender: "Joseph",
               text: "Chuck Norris has the world's most famous taint.",
-              time: "18/08/2022",
+              time: "8/20/22, 5:16 PM",
             },
           ],
         },

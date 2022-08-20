@@ -6,16 +6,14 @@ class ChatItem extends Component {
     const { name, photo } = this.props;
     const lastMessage =
       this.props.messages[this.props.messages.length - 1].text;
-    let date;
-
-    if (this.props.messages[this.props.messages.length - 1].time.length > 10) {
-      date = this.props.messages[this.props.messages.length - 1].time.slice(
-        0,
-        -6
-      );
-    } else {
-      date = this.props.messages[this.props.messages.length - 1].time;
-    }
+    let options = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    };
+    let date = new Date(
+      this.props.messages[this.props.messages.length - 1].time
+    ).toLocaleString("en-US", options);
 
     return (
       <div className="chat-item" onClick={this.props.onChangeChat} id={name}>

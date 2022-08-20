@@ -40,11 +40,11 @@ class SendMessageForm extends Component {
   };
 
   getTime = () => {
-    let time = new Date()
-      .toLocaleString()
-      .replace(/\./g, "/")
-      .replace(/,/, "")
-      .slice(0, -3);
+    let options = {
+      dateStyle: "short",
+      timeStyle: "short",
+    };
+    let time = new Date().toLocaleString("en-US", options);
     return time;
   };
 
