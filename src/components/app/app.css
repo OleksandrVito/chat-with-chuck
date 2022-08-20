@@ -5,6 +5,7 @@
   background-color: #fff;
   position: relative;
   box-sizing: border-box;
+  color: red;
 }
 
 .visible {
