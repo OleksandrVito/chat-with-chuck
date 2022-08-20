@@ -38,7 +38,7 @@ class App extends Component {
           },
           {
             name: "Donald",
-            photo: "url(../../avatar/Donald.png)",
+            photo: "url(./avatar/Donald.png)",
             messages: [
               {
                 sender: "Donald",
@@ -49,7 +49,7 @@ class App extends Component {
           },
           {
             name: "Josefina",
-            photo: "url(../avatar/Josefina.png)",
+            photo: "url(./avatar/Josefina.png)",
             messages: [
               {
                 sender: "Josefina",
@@ -65,7 +65,7 @@ class App extends Component {
           },
           {
             name: "Joseph",
-            photo: "url(/avatar/Joseph.png)",
+            photo: "url(./avatar/Joseph.png)",
             messages: [
               {
                 sender: "Joseph",
