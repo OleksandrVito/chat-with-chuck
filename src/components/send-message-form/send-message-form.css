@@ -1,0 +1,93 @@
+.send-message-form {
+  width: 60vw;
+  min-height: 100px;
+  background-color: rgba(249, 249, 249, 255);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 25px;
+  margin: 0;
+  box-sizing: border-box;
+  border: 2px solid rgba(230, 230, 230, 255);
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid rgba(230, 230, 230, 255);
+  border-radius: 25px;
+  font-size: 20px;
+  padding: 15px;
+  line-height: 30px;
+  padding-right: 50px;
+  vertical-align: bottom;
+  align-items: center;
+  font-family: "Mulish", sans-serif;
+  color: rgba(100, 100, 100, 255);
+}
+
+textarea:focus {
+  outline: solid 2px rgba(157, 235, 244, 255);
+  border: 2px solid white;
+}
+
+textarea::placeholder {
+  color: rgba(200, 200, 200, 255);
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+.send {
+  position: absolute;
+  top: 42px;
+  right: 40px;
+  background: none;
+  width: 40px;
+  height: 40px;
+  border: none;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 34px;
+  display: inline-block;
+  color: rgba(100, 100, 100, 255);
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: "liga";
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .send-message-form {
+    max-width: calc(100vw - 384px);
+  }
+}
+
+@media (max-width: 768px) {
+  .send-message-form {
+    max-width: 50vw;
+  }
+}
+
+@media (max-device-width: 568px) {
+  .send-message-form {
+    display: none;
+  }
+}
