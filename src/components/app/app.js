@@ -83,7 +83,7 @@ class App extends Component {
         term: "",
         currentData: {
           name: "Joseph",
-          photo: "url(/avatar/Joseph.png)",
+          photo: "url(./avatar/Joseph.png)",
           messages: [
             {
               sender: "Joseph",
