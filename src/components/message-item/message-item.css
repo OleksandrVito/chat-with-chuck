@@ -63,7 +63,7 @@
   background-color: rgba(231, 231, 231, 255);
   color: rgba(100, 100, 100, 255);
   margin-top: -10px;
-  /* max-width: 50vw; */
+  max-width: 50vw;
   word-wrap: break-all;
   overflow-wrap: break-word;
 }
@@ -78,12 +78,12 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .users .message-text {
-    /* max-width: 45vw; */
+    max-width: 50vw;
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .users .message-text {
-    /* max-width: 35vw; */
+    max-width: 80vw;
   }
 }
